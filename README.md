@@ -1,24 +1,40 @@
-# Web Survey
 
-This is a survey application where users can fill out the survey and view all the responses.
+#  Web Survey
+A web application made in node.js that takes results from a survey 
+and displays it. 
 
-## Features
+# Table of contents  
+1. [Introduction](#introduction)  
+2. [Some paragraph](#paragraph1)  
+    1. [Sub paragraph](#subparagraph1)  
+3. [Another paragraph](#paragraph2)  
 
-- User-friendly interface for filling out the survey
-- Real-time display of survey responses
-- Data storage for survey responses
+## Screenshots  
 
-## Installation
+![App Screenshot](screenshots/survey.png)
 
-2. Install the dependencies:
+## Run Locally  
 
-    ```bash
-    npm install
+Clone the project  
 
-## Technologies Used
+~~~bash  
+git clone https://github.com/ondrejhonus/web_survey.git
+~~~
 
-- HTML
-- CSS
-- JavaScript
-- Node.js
-- Express.js
+Go to the project directory  
+
+~~~bash  
+cd web_survey
+~~~
+
+Install dependencies  
+
+~~~bash  
+npm install
+~~~
+
+Start the server  
+
+~~~bash  
+node .
+~~~
