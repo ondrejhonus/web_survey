@@ -1,0 +1,27 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #aac1dd;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+ 
+a.active{
+    color: #63b2e7 !important;
+    font-weight: bold !important;
+}
+
+footer p {
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
