@@ -32,9 +32,15 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="content">
     <h1>Music survey</h1>
     <form action="/submit" method="post" class="form-container">
+      <div>
+        <label class="mainLabel" for="name">What is your name (or nickname)?</label>
+        <br>
+        <input type="text" name="name" id="name" />
+      </div>
+      <hr>
       <div>
         <label class="mainLabel" for="genres">What genre of music is your absolute favorite?</label>
         <select name="genres" id="genres">
@@ -119,7 +125,7 @@
       <button type="submit" class="submit">Submit</button>
     </form>
   </main>
-  <footer>
+  <footer class="footer">
     <p>Ondřej Honus - 2024 - Web survey &copy</p>
   </footer>
 </body>

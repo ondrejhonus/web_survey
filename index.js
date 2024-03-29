@@ -1,31 +1,48 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
+const express = require("express");
+const bodyParser = require("body-parser");
+const fs = require("fs");
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 
-/* Routa pro zobrazení úvodní stránky */ 
-app.get('/', (req, res) => {
-    // Zde, na úvodní stránce, budeme zobrazovat formulář pro vyplnění ankety
-    res.render('index', { title: 'Webová anketa' }); // index.ejs je soubor šablony
+app.get("/", (req, res) => {
+  res.render("index", { title: "Webová anketa" });
 });
 
-/* Routa pro zpracování dat z formuláře */
-app.post('/submit', (req, res) => {
-    // Zde budeme ukládat data z formuláře do souboru responses.json
-    res.redirect('/results'); // Po uložení dat přesměrujeme uživatele na stránku s výsledky
+app.post("/submit", (req, res) => {
+  const newResult = {
+    id: Date.now(),
+    timestamp: new Date().toISOString(),
+    answers: req.body, 
+  };
+
+  fs.readFile("results.json", (err, data) => {
+    if (err) throw err;
+    let json = JSON.parse(data);
+    json.push(newResult);
+
+    fs.writeFile("results.json", JSON.stringify(json, null, 2), (err) => {
+      if (err) throw err;
+      console.log("Data byla úspěšně uložena.");
+      res.redirect("/results");
+    });
+  });
 });
 
-/* Routa pro zobrazení výsledků ankety */
-app.get('/results', (req, res) => {
-    // Zde bude načtení dat ze souboru responses.json a jejich předání do šablony
-    res.render('results', { title: 'Výsledky ankety' }); // results.ejs je soubor šablony
+app.get("/results", (req, res) => {
+  fs.readFile('results.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Nastala chyba při čtení dat.');
+    }
+    const results = JSON.parse(data);
+    res.render('results', { title: "Výsledky ankety", results }); 
+  });
 });
 
 app.listen(PORT, () => {
-console.log(`http://localhost:${PORT}`);
+  console.log(`Server běží na portu ${PORT}`);
 });

@@ -28,10 +28,34 @@
   </div>
 </nav>
     </header>
-    <main>
-      
+    <main class="content">
+      <h1>Survey results</h1>
+      <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Timestamp</th>
+          <th>Favourite Genre</th>
+          <th>Frequency</th>
+          <th>Hours daily</th>
+          <th>Instruments</th>
+        </tr>
+        <% results.forEach(function(result) { 
+          const date = new Date(result.timestamp);
+          const dateString = `${('0' + date.getDate()).slice(-2)}.${('0' + (date.getMonth() + 1)).slice(-2)}.${date.getFullYear()}`;
+          const timeString = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
+      %>
+        <tr>
+          <td><%= result.answers.name %></td>
+          <td><%= dateString %> <%= timeString %></td>
+          <td><%= result.answers.genres %></td>
+          <td><%= result.answers.frequency %></td>
+          <td><%= result.answers.hours %></td>
+          <td><%= result.answers.instruments %></td>
+        </tr>
+        <% }); %>
+      </table>
     </main>
-    <footer>
+    <footer class="footer">
         <p>Ondřej Honus - 2024 - Web survey &copy</p>
     </footer>
 </body>
