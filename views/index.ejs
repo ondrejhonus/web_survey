@@ -1,38 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web survey</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web survey</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Web survey</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-current="page" href="/">Survey</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="results">Results</a>
-          </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    </header>
-    <main>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Web survey</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-current="page" href="/">Survey</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="results">Results</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h1>Music survey</h1>
+    <form action="/submit" method="post" class="form-container">
+      <div>
+        <label class="mainLabel" for="genres">What genre of music is your absolute favorite?</label>
+        <select name="genres" id="genres">
+          <option value="rock">Rock</option>
+          <option value="hardrock">Hard rock</option>
+          <option value="metal">Metal</option>
+          <option value="deathmetal">Death metal</option>
+          <option value="punk">Punk</option>
+          <option value="jazz">Jazz</option>
+          <option value="pop">Pop</option>
+          <option value="rap">Rap</option>
+          <option value="hip-hop">Hip Hop</option>
+          <option value="country">Country</option>
+          <option value="classical">Classical</option>
+          <option value="electronic">Electronic</option>
+          <option value="rnb">R&B</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <hr />
+      <div>
+        <label class="mainLabel" for="frequency">How often do you listen to music?</label>
+        <br>
+        <input type="radio" name="frequency" id="frequency-daily" value="daily" />
+        <label class="radio" for="frequency-daily">Every day</label>
+        <br />
+        <input type="radio" name="frequency" id="frequency-weekly" value="weekly" />
+        <label class="radio" for="frequency-weekly">Every other day</label>
+        <br />
+        <input type="radio" name="frequency" id="frequency-monthly" value="monthly" />
+        <label class="radio" for="frequency-monthly">Few times a month</label>
+        <br />
+        <input type="radio" name="frequency" id="frequency-never" value="never" />
+        <label class="radio" for="frequency-never">I don't listen to music</label>
+      </div>
+      <hr />
+      <div>
+        <label class="mainLabel" for="hours">How many hours a day do you listen to music?</label>
+        <input type="number" name="hours" id="hours" min="0" max="24" />
+      </div>
+      <hr />
+      <div>
+        <label class="mainLabel" for="instruments">Do you play any musical instruments?</label>
+        <br>
+        <input type="checkbox" name="instruments" id="instruments-guitar" value="guitar" />
+        <label class="radio" for="instruments-guitar">Guitar</label>
+        <br>
+        <input type="checkbox" name="instruments" id="instruments-bass" value="bass" />
+        <label class="radio" for="instruments-bass">Bass</label>
+        <br/>
+        <input type="checkbox" name="instruments" id="instruments-drums" value="drums" />
+        <label class="radio" for="instruments-drums">Drums</label>
+        <br/>
+        <input type="checkbox" name="instruments" id="instruments-piano" value="piano" />
+        <label class="radio" for="instruments-piano">Piano</label>
+        <br/>
+        <input type="checkbox" name="instruments" id="instruments-violin" value="violin" />
+        <label class="radio" for="instruments-violin">Violin</label>
+        <br/>
+        <input type="checkbox" name="instruments" id="instruments-saxophone" value="saxophone" />
+        <label class="radio" for="instruments-saxophone">Saxophone</label>
+        <br/>
+        <input type="checkbox" name="instruments" id="instruments-specify" value="specify" />
+        <label class="radio" for="instruments-specify">Other</label>
+        <br/>
+        <input type="text" name="instrument-specify" id="instrument-specify" placeholder="Specify your instrument" disabled />
       
-    </main>
-    <footer>
-        <p>Ondřej Honus - 2024 - Web survey &copy</p>
-    </footer>
+        <script>
+          let specifyCheckbox = document.getElementById('instruments-specify');
+          let specifyInput = document.getElementById('instrument-specify');
+          
+          specifyCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+              specifyInput.disabled = false;
+            } else {
+              specifyInput.disabled = true;
+            }
+          });
+        </script>
+      </div>
+      <hr />
+      <button type="submit" class="submit">Odeslat odpovědi</button>
+    </form>
+  </main>
+  <footer>
+    <p>Ondřej Honus - 2024 - Web survey &copy</p>
+  </footer>
 </body>
+
 </html>

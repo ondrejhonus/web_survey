@@ -1,20 +1,28 @@
-html{
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #000000;
     color: #aac1dd;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
- 
-a.active{
+
+main {
+    margin-top: 10vh;
+}
+
+a.active {
     color: #63b2e7 !important;
     font-weight: bold !important;
+}
+
+h1 {
+    text-align: center;
 }
 
 footer p {
@@ -24,4 +32,34 @@ footer p {
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+label.mainLabel {
+    color: #fff;
+    font-size: 2vh;
+}
+
+button.submit {
+    background-color: #63b2e7;
+    color: #fff;
+    border: solid 1px black;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1.5vh;
+}
+
+form {
+    margin: 0 auto;
+    width: 60vh;
+    padding: 20px;
+    background-color: #000000;
+    border: solid 1px #63b2e7;
+    border-radius: 10px;
+}
+
+select {
+    background-color: #8495e0;
+    border: white 1px solid;
+    border-radius: 0.3vh;
 }
