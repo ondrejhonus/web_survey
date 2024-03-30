@@ -4,7 +4,7 @@ A web application made in node.js that takes results from a survey
 and displays it. 
 
 # Table of contents  
-1. [Introduction](#screenshots)  
+1. [Introduction](#web-survey)  
 2. [Run Locally](#run-locally)  
     1. [Clone](#clone-the-project)  
     1. [Install](#install-dependencies)  
