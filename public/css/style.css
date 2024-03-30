@@ -131,3 +131,14 @@ td {
 .navbar {
     width: 100%;
 }
+div.pieCharts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 5vh;
+}
+div.pieCharts canvas{
+    margin: 0 5vh;
+}
+

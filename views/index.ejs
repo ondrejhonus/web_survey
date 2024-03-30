@@ -44,36 +44,36 @@
       <div>
         <label class="mainLabel" for="genres">What genre of music is your absolute favorite?</label>
         <select name="genres" id="genres">
-          <option value="rock">Rock</option>
-          <option value="hardrock">Hard rock</option>
-          <option value="metal">Metal</option>
-          <option value="deathmetal">Death metal</option>
-          <option value="punk">Punk</option>
-          <option value="jazz">Jazz</option>
-          <option value="pop">Pop</option>
-          <option value="rap">Rap</option>
-          <option value="hip-hop">Hip Hop</option>
-          <option value="country">Country</option>
-          <option value="classical">Classical</option>
-          <option value="electronic">Electronic</option>
-          <option value="rnb">R&B</option>
-          <option value="other" selected>Other</option>
+          <option value="Rock">Rock</option>
+          <option value="Hard rock">Hard rock</option>
+          <option value="Metal">Metal</option>
+          <option value="Death metal">Death metal</option>
+          <option value="Punk">Punk</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Pop">Pop</option>
+          <option value="Rap">Rap</option>
+          <option value="Hip Hop">Hip Hop</option>
+          <option value="Country">Country</option>
+          <option value="Classical">Classical</option>
+          <option value="Electronic">Electronic</option>
+          <option value="R&B">R&B</option>
+          <option value="Other" selected>Other</option>
         </select>
       </div>
       <hr />
       <div>
         <label class="mainLabel" for="frequency">How often do you listen to music?</label>
         <br>
-        <input type="radio" name="frequency" id="frequency-daily" value="daily" />
+        <input type="radio" name="frequency" id="frequency-daily" value="Daily" checked/>
         <label class="radio" for="frequency-daily">Every day</label>
         <br />
-        <input type="radio" name="frequency" id="frequency-weekly" value="weekly" />
+        <input type="radio" name="frequency" id="frequency-weekly" value="Weekly"/>
         <label class="radio" for="frequency-weekly">Every other day</label>
         <br />
-        <input type="radio" name="frequency" id="frequency-monthly" value="monthly" />
+        <input type="radio" name="frequency" id="frequency-monthly" value="Monthly"/>
         <label class="radio" for="frequency-monthly">Every now and then</label>
         <br />
-        <input type="radio" name="frequency" id="frequency-never" value="never" checked/>
+        <input type="radio" name="frequency" id="frequency-never" value="Never"/>
         <label class="radio" for="frequency-never">I don't listen to music</label>
       </div>
       <hr />
@@ -85,41 +85,28 @@
       <div>
         <label class="mainLabel" for="instruments">Do you play any musical instruments?</label>
         <br>
-        <input type="checkbox" name="instruments" id="instruments-guitar" value="guitar" />
+        <input type="checkbox" name="instruments" id="instruments-guitar" value=" Guitar" />
         <label class="radio" for="instruments-guitar">Guitar</label>
         <br>
-        <input type="checkbox" name="instruments" id="instruments-bass" value="bass" />
+        <input type="checkbox" name="instruments" id="instruments-bass" value=" Bass" />
         <label class="radio" for="instruments-bass">Bass</label>
         <br/>
-        <input type="checkbox" name="instruments" id="instruments-drums" value="drums" />
+        <input type="checkbox" name="instruments" id="instruments-drums" value=" Drums" />
         <label class="radio" for="instruments-drums">Drums</label>
         <br/>
-        <input type="checkbox" name="instruments" id="instruments-piano" value="piano" />
+        <input type="checkbox" name="instruments" id="instruments-piano" value=" Piano" />
         <label class="radio" for="instruments-piano">Piano</label>
         <br/>
-        <input type="checkbox" name="instruments" id="instruments-violin" value="violin" />
+        <input type="checkbox" name="instruments" id="instruments-violin" value=" Violin" />
         <label class="radio" for="instruments-violin">Violin</label>
         <br/>
-        <input type="checkbox" name="instruments" id="instruments-saxophone" value="saxophone" />
+        <input type="checkbox" name="instruments" id="instruments-saxophone" value=" Saxophone" />
         <label class="radio" for="instruments-saxophone">Saxophone</label>
         <br/>
-        <input type="checkbox" name="instruments" id="instruments-specify" value="specify" />
-        <label class="radio" for="instruments-specify">Other</label>
         <br/>
-        <input type="text" name="instrument-specify" id="instrument-specify" placeholder="Specify your instrument" disabled />
-      
-        <script>
-          let specifyCheckbox = document.getElementById('instruments-specify');
-          let specifyInput = document.getElementById('instrument-specify');
-          
-          specifyCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-              specifyInput.disabled = false;
-            } else {
-              specifyInput.disabled = true;
-            }
-          });
-        </script>
+        <input type="checkbox" id="instruments-other"/>
+        <input disabled type="text" name="instruments" id="instruments-specify" placeholder="Other"/>
+        <br/>
       </div>
       <hr />
       <button type="submit" class="submit">Submit</button>
@@ -128,6 +115,26 @@
   <footer class="footer">
     <p>Ondřej Honus - 2024 - Web survey &copy</p>
   </footer>
+  <script>
+    let otherInstruments = document.getElementById('instruments-other');
+    let specifyInstruments = document.getElementById('instruments-specify');
+    otherInstruments.addEventListener('change', () => {
+      if (otherInstruments.checked) {
+        specifyInstruments.disabled = false;
+      } else {
+        specifyInstruments.disabled = true;
+      }
+    });
+    let frequencyNever = document.getElementById('frequency-never');
+    let hoursInput = document.getElementById('hours');
+    frequencyNever.addEventListener('change', () => {
+      if (frequencyNever.checked) {
+        hoursInput.disabled = true;
+      } else {
+        hoursInput.disabled = false;
+      }
+    });
+  </script>
 </body>
 
 </html>

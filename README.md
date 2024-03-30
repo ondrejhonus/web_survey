@@ -42,6 +42,6 @@ node .
 
 ## Tools
 
-**Graphs made with [D3JS](https://observablehq.com/@d3/gallery)**
+**Graphs made with [Chart.js](https://www.chartjs.org/)**
 
 **Navbar made with [Bootstrap5](https://getbootstrap.com/)**
