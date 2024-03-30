@@ -179,15 +179,6 @@ input[type="number"] {
     padding: 0.5vh;
 }
 
-@media (max-width: 600px) {
-
-    .chartContainer,
-    input[type="text"],
-    input[type="number"] {
-        max-width: 100%;
-    }
-}
-
 div.pieCharts canvas {
     margin: 0 5vh;
 }
