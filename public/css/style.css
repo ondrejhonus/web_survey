@@ -1,12 +1,9 @@
 html,
 body {
-    width: 100%;
-    display: flex;
-    margin: 0;
-    align-content: center;
-    vertical-align: middle;
-    padding: 0;
     flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
 }
 
@@ -15,12 +12,15 @@ body {
     color: white;
     margin: auto;
     padding: 0;
-    box-sizing: border-box;
+    animation: fadeIn 1s forwards;
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    animation: fadeIn 1s forwards;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vh;
 }
+
 
 @keyframes fadeIn {
     from {
@@ -45,9 +45,11 @@ body {
 }
 
 main {
-    margin: auto;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 5vh;
+
 }
 
 a.active {
@@ -99,10 +101,17 @@ select {
 }
 
 table {
-    width: 50vh;
     border-collapse: collapse;
-    margin: 0 auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
     margin-top: 5vh;
+    background-color: #000000;
+    color: #fff;
+    border: solid 1px #63b2e7;
+    border-radius: 10px;
+
 }
 
 th,
@@ -129,21 +138,26 @@ td {
     background-color: #aac1dd;
 }
 
-.navbar {
-    width: 100%;
-}
 div.pieCharts {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 4vh;
     text-align: center;
-    margin-top: 5vh;
+
 }
-div.pieCharts canvas{
-    margin: 0 5vh;
+
+div.genres{
+    width: max-content;
 }
-.chartContainer {
-    width: 70vh;
+
+@media (max-width: 800px) {
+    div.pieCharts {
+        width: 100%;
+        visibility: hidden;
+        display: none;
+    }
 
 }
 input[type="text"] {
@@ -154,9 +168,49 @@ input[type="text"] {
     max-width: 45vh;
     border: none;
 }
+
 input[type="text"]::placeholder {
     color: #747cbe;
 }
+
+input[type="number"] {
+    border: white 1px solid;
+    border-radius: 0.3vh;
+    padding: 0.5vh;
+}
+
+@media (max-width: 600px) {
+
+    .chartContainer,
+    input[type="text"],
+    input[type="number"] {
+        max-width: 100%;
+    }
+}
+
+div.pieCharts canvas {
+    margin: 0 5vh;
+}
+
+.chartContainer {
+    max-width: 40vw !important;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+input[type="text"] {
+    border: white 1px solid;
+    border-radius: 0.3vh;
+    padding: 0.5vh;
+    margin: 0.5vh;
+    max-width: 45vh;
+    border: none;
+}
+
+input[type="text"]::placeholder {
+    color: #747cbe;
+}
+
 input[type="number"] {
     border: white 1px solid;
     border-radius: 0.3vh;
@@ -167,18 +221,22 @@ input[type="number"] {
     border: none;
 
 }
-input{
+
+input {
     background-color: #092349;
     color: #fff;
 }
+
 input:disabled {
     background-color: #141414;
     color: #535353 !important;
     border: none;
 }
+
 input[type="text"]:disabled::placeholder {
     color: #535353;
 }
+
 select {
     background-color: #092349;
     color: #fff;

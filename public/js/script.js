@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 ],
                 borderWidth: 3,
-                hoverOffset: 100
+                hoverOffset: 100,
             }]
         },
     });
@@ -65,10 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     'rgba(75, 192, 192, 0.7)',
                 ],
                 borderWidth: 3,
-                hoverOffset: 100
-
+                hoverOffset: 100,
             }]
-            
         },
     });
 });
