@@ -4,10 +4,11 @@ A web application made in node.js that takes results from a survey
 and displays it. 
 
 # Table of contents  
-1. [Introduction](#introduction)  
-2. [Some paragraph](#paragraph1)  
-    1. [Sub paragraph](#subparagraph1)  
-3. [Another paragraph](#paragraph2)  
+1. [Introduction](#screenshots)  
+2. [Run Locally](#run-locally)  
+    1. [Clone](#clone-the-project)  
+    1. [Install](#install-dependencies)  
+3. [Tools](#tools)  
 
 ## Screenshots  
 
@@ -15,19 +16,19 @@ and displays it.
 
 ## Run Locally  
 
-Clone the project  
+### Clone the project  
 
 ~~~bash  
 git clone https://github.com/ondrejhonus/web_survey.git
 ~~~
 
-Go to the project directory  
+### Go to the project directory  
 
 ~~~bash  
 cd web_survey
 ~~~
 
-Install dependencies  
+### Install dependencies  
 
 ~~~bash  
 npm install
@@ -41,4 +42,5 @@ node .
 
 ## Tools
 
-Graphs made by [D3JS](https://observablehq.com/@d3/gallery)
+Graphs made with [D3JS](https://observablehq.com/@d3/gallery)
+Navbar made with [Bootstrap5](https://getbootstrap.com/)
