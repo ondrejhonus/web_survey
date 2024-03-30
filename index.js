@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index", { title: "Webová anketa" });
+  res.render("index", { title: "Web survey" });
 });
 
 app.post("/submit", (req, res) => {
@@ -26,7 +26,7 @@ app.post("/submit", (req, res) => {
 
     fs.writeFile("results.json", JSON.stringify(json, null, 2), (err) => {
       if (err) throw err;
-      console.log("Data byla úspěšně uložena.");
+      console.log("Data saved!");
       res.redirect("/results");
     });
   });
@@ -36,13 +36,13 @@ app.get("/results", (req, res) => {
   fs.readFile('results.json', 'utf8', (err, data) => {
     if (err) {
       console.error(err);
-      return res.status(500).send('Nastala chyba při čtení dat.');
+      return res.status(500).send('There was an error when reading file.');
     }
     const results = JSON.parse(data);
-    res.render('results', { title: "Výsledky ankety", results }); 
+    res.render('results', { title: "Survey results", results }); 
   });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server běží na portu ${PORT}`);
+  console.log(`http://localhost:${PORT}`);
 });

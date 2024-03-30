@@ -37,7 +37,7 @@ body {
     border-bottom: solid #63b2e7 1px;
     color: #63b2e7 !important;
     justify-content: space-between !important;
-    position: fixed !important;
+    position: relative !important;
     align-items: center !important;
     width: 100% !important;
     z-index: 1000 !important;
@@ -74,9 +74,10 @@ label.mainLabel {
 }
 
 button.submit {
-    background-color: #63b2e7;
+    background-color: #1f5980;
     color: #fff;
-    border: solid 1px black;
+    border: solid 1px white;
+    border-radius: 0.7vh;
     padding: 10px 20px;
     margin: 10px 0;
     cursor: pointer;
@@ -141,4 +142,45 @@ div.pieCharts {
 div.pieCharts canvas{
     margin: 0 5vh;
 }
+.chartContainer {
+    width: 70vh;
 
+}
+input[type="text"] {
+    border: white 1px solid;
+    border-radius: 0.3vh;
+    padding: 0.5vh;
+    margin: 0.5vh;
+    max-width: 45vh;
+    border: none;
+}
+input[type="text"]::placeholder {
+    color: #747cbe;
+}
+input[type="number"] {
+    border: white 1px solid;
+    border-radius: 0.3vh;
+    padding: 0.5vh;
+    margin: 0.5vh;
+    max-width: 5vh;
+    display: flex;
+    border: none;
+
+}
+input{
+    background-color: #092349;
+    color: #fff;
+}
+input:disabled {
+    background-color: #141414;
+    color: #535353 !important;
+    border: none;
+}
+input[type="text"]:disabled::placeholder {
+    color: #535353;
+}
+select {
+    background-color: #092349;
+    color: #fff;
+    border: none;
+}

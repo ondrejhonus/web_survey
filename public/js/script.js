@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 ],
                 borderWidth: 3,
                 hoverOffset: 100
+
             }]
+            
         },
     });
 });
