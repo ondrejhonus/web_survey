@@ -4,6 +4,15 @@ const fs = require("fs");
 const app = express();
 const PORT = 3000;
 
+const sqlite = require('sqlite3').verbose();
+
+let db = new sqlite.Database('../db/sample.db');
+
+db.run('CREATE TABLE genres(name text)');
+
+db.close();
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
