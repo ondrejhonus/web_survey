@@ -23,8 +23,6 @@ app.get('/jsonresults', (req, res) => {
   });
 });
 
-
-
 app.post("/submit", (req, res) => {
   const newResult = {
     id: Date.now(),

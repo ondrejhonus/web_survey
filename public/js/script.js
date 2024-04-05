@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         },
     });
 });
-
 document.addEventListener('DOMContentLoaded', async function() {
     const response = await fetch('/jsonresults');
     const data = await response.json();
