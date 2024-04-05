@@ -7,10 +7,11 @@
   <title>Music survey results</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
-  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="js/script.js"></script>
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -38,48 +39,23 @@
   </header>
   <main class="content">
     <h1>Survey results</h1>
-    <div style="overflow-x: scroll" class="centered tableDiv">
-      <table id="myTable" class="display" border="1">
+    <div class="container">
+      <table id="example" class="display nowrap" width="100%">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Timestamp</th>
-            <th>Favourite Genre</th>
+            <th>Time</th>
+            <th>Genres</th>
             <th>Frequency</th>
             <th>Hours daily</th>
             <th>Instruments</th>
           </tr>
         </thead>
-        <% results.forEach(function(result) { const date=new Date(result.timestamp); const dateString=`${('0' +
-          date.getDate()).slice(-2)}.${('0' + (date.getMonth() + 1)).slice(-2)}.${date.getFullYear()}`; const
-          timeString=`${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' +
-          date.getSeconds()).slice(-2)}`; %>
-          <tbody>
-            <tr>
-              <td>
-                <%= result.answers.name %>
-              </td>
-              <td>
-                <%= dateString %>
-                  <%= timeString %>
-              </td>
-              <td>
-                <%= result.answers.genres %>
-              </td>
-              <td>
-                <%= result.answers.frequency %>
-              </td>
-              <td>
-                <%= result.answers.hours %>
-              </td>
-              <td>
-                <%= result.answers.instruments %>
-              </td>
-            </tr>
-          </tbody>
-          <% }); %>
+
+
       </table>
     </div>
+
     <div class="pieCharts">
       <div class="genres chartContainer">
         <label for="genreChart ">Favourite music genres</label>
@@ -97,7 +73,6 @@
 
   <!-- Include Chart.js library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/script.js"></script>
 </body>
 
 </html>

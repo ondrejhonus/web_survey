@@ -12,6 +12,19 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Web survey" });
 });
 
+app.get('/jsonresults', (req, res) => {
+  fs.readFile('results.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('There was an error when reading file.');
+    }
+    const results = JSON.parse(data);
+    res.json(results);
+  });
+});
+
+
+
 app.post("/submit", (req, res) => {
   const newResult = {
     id: Date.now(),
