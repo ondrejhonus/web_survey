@@ -45,3 +45,5 @@ node .
 **Graphs made with [Chart.js](https://www.chartjs.org/)**
 
 **Navbar made with [Bootstrap5](https://getbootstrap.com/)**
+
+**Table made with [DataTables](https://datatables.net/)**
