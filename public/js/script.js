@@ -1,22 +1,23 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    const response = await fetch('/jsonresults');
+    const data = await response.json();
+    console.log(data);
+
     const genreData = {};
     const frequencyData = {};
-    const table = document.getElementById('surveyTable');
-    const rows = table.getElementsByTagName('tr');
-    for (let i = 1; i < rows.length; i++) {
-        const genreCell = rows[i].getElementsByTagName('td')[2];
-        const genres = genreCell.textContent.trim().split(',');
+
+    data.forEach(row => {
+        const genres = row.answers.genres.split(',');
         genres.forEach(genre => {
             genreData[genre] = (genreData[genre] || 0) + 1;
         });
-    }
-    for (let i = 1; i < rows.length; i++) {
-        const frequencyCell = rows[i].getElementsByTagName('td')[3];
-        const frequencies = frequencyCell.textContent.trim().split(',');
+
+        const frequencies = row.answers.frequency.split(',');
         frequencies.forEach(frequency => {
             frequencyData[frequency] = (frequencyData[frequency] || 0) + 1;
         });
-    }
+    });
+
     const genreLabels = Object.keys(genreData);
     const genreCounts = Object.values(genreData);
     const frequencyLabels = Object.keys(frequencyData);
@@ -44,15 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     'rgba(255, 159, 64, 0.7)',
                     'rgba(255, 99, 132, 0.7)',
                     'rgba(54, 162, 235, 0.7)',
-
                 ],
-                borderWidth: 3,
-                hoverOffset: 100,
+                borderWidth: 2,
+                hoverOffset: 15,
             }]
         },
     });
+
     const ctx2 = document.getElementById('frequencyChart').getContext('2d');
-    const frequencyChart = new Chart(ctx2, {
+    new Chart(ctx2, {
         type: 'pie',
         data: {
             labels: frequencyLabels,
@@ -64,10 +65,33 @@ document.addEventListener('DOMContentLoaded', function() {
                     'rgba(255, 206, 86, 0.7)',
                     'rgba(75, 192, 192, 0.7)',
                 ],
-                borderWidth: 3,
-                hoverOffset: 100,
+                borderWidth: 2,
+                hoverOffset: 15,
             }]
         },
     });
 });
 
+document.addEventListener('DOMContentLoaded', async function() {
+    const response = await fetch('/jsonresults');
+    const data = await response.json();
+    console.log(data);
+    $('#example').DataTable({
+        data: data,
+        columns: [
+            { data: "answers.name" },
+            { 
+                data: "timestamp",
+                render: function(data) {
+                    const date = new Date(data);
+                    return date.toLocaleString();
+                }
+            },
+            { data: "answers.genres" },
+            { data: "answers.frequency" },
+            { data: "answers.hours" },
+            { data: "answers.instruments" },
+        ]
+    });
+});
+      

@@ -9,7 +9,7 @@ body {
 
 body {
     background-color: rgb(0, 0, 0);
-    color: white;
+    color: white !important;
     margin: auto;
     padding: 0;
     animation: fadeIn 1s forwards;
@@ -74,6 +74,9 @@ label.mainLabel {
     color: #fff;
     font-size: 2vh;
 }
+button{
+    color: white;
+}
 
 button.submit {
     background-color: #1f5980;
@@ -116,9 +119,9 @@ table {
 
 th,
 td {
-    border: 1px solid #63b2e7;
+    border: 1px solid #63b2e7 !important;
     padding: 10px;
-    text-align: center;
+    text-align: center !important;
 }
 
 ::-webkit-scrollbar {
@@ -184,9 +187,12 @@ div.pieCharts canvas {
 }
 
 .chartContainer {
-    max-width: 40vw !important;
-    margin: 0 auto;
-    margin-top: 5vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 23vw;
 }
 
 input[type="text"] {
@@ -210,7 +216,6 @@ input[type="number"] {
     max-width: 5vh;
     display: flex;
     border: none;
-
 }
 
 input {
@@ -232,4 +237,20 @@ select {
     background-color: #092349;
     color: #fff;
     border: none;
+}
+.tableDiv{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+option{
+    background-color: black;
+    color: #fff;
+    border: none;
+}
+div.dt-container .dt-paging .dt-paging-button.disabled, div.dt-container .dt-paging .dt-paging-button.disabled:hover, div.dt-container .dt-paging .dt-paging-button.disabled:active {
+    color: #fff !important;
 }
