@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const genreData = {};
     const frequencyData = {};
-    const table = document.getElementById('surveyTable');
+    const table = document.getElementById('myTable');
     const rows = table.getElementsByTagName('tr');
     for (let i = 1; i < rows.length; i++) {
         const genreCell = rows[i].getElementsByTagName('td')[2];
@@ -71,3 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+$(document).ready(function() {
+    $('#myTable').DataTable();
+});
