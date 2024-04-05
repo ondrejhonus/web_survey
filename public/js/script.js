@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     'rgba(255, 99, 132, 0.7)',
                     'rgba(54, 162, 235, 0.7)',
                 ],
-                borderWidth: 3,
-                hoverOffset: 100,
+                borderWidth: 2,
+                hoverOffset: 15,
             }]
         },
     });
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     'rgba(255, 206, 86, 0.7)',
                     'rgba(75, 192, 192, 0.7)',
                 ],
-                borderWidth: 3,
-                hoverOffset: 100,
+                borderWidth: 2,
+                hoverOffset: 15,
             }]
         },
     });
@@ -80,7 +80,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         data: data,
         columns: [
             { data: "answers.name" },
-            { data: "timestamp" },
+            { 
+                data: "timestamp",
+                render: function(data) {
+                    const date = new Date(data);
+                    return date.toLocaleString();
+                }
+            },
             { data: "answers.genres" },
             { data: "answers.frequency" },
             { data: "answers.hours" },
